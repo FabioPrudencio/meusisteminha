@@ -1,0 +1,11 @@
+urls - meusisteminha tem uma include que chama urls meublog.
+urls - meu blog chama função do arquivo views.
+views - função chama arquivo html.
+
+				<!--{% if post.titulo == "Giulia Lutke"  %}
+				    <h2>{{post.titulo}}</h2>
+					<a href={{post.texto}}>Giulia</a>
+				{% else %}
+					<h2>{{post.titulo}}</h2>
+					{{post.texto}}
+				{% endif %}-->

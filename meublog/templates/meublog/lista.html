@@ -1,0 +1,29 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<title>Meus Posts</title>
+</head>
+<body>
+	<main class='container'>
+		<img src="{% static 'img/logo.png' %}">
+		<h1>Lista dos posts</h1>
+		{% for post in lista_posts %}
+			<div class="card">
+				<div class="card-body">
+					<article>
+						<h4 class="card-title">{{post.titulo}}</h4>
+						<p class="card-text">{{post.texto}}</p>
+						<a href="{% url 'novo' %}" class='btn btn-info'>Novo</a>
+						<a href="{% url 'atualizar' post.id %}" class='btn btn-info'>Atualizar</a>
+						<a href="{% url 'excluir' post.id %}" class='btn btn-info'>Excluir</a>
+				</article>
+				</div>
+			</div>
+		{% endfor %}
+	</main>
+</body>
+</html>
